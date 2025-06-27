@@ -1,8 +1,45 @@
 @import "tailwindcss";
 
+/* カスタムカラーパレット */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* はぐたっちブランドカラー */
+  --hugtouch-pink-50: #fef7f7;
+  --hugtouch-pink-100: #fee2e2;
+  --hugtouch-pink-200: #fecaca;
+  --hugtouch-pink-300: #fca5a5;
+  --hugtouch-pink-400: #f87171;
+  --hugtouch-pink-500: #ef4444;
+
+  --hugtouch-blue-50: #f0f9ff;
+  --hugtouch-blue-100: #e0f2fe;
+  --hugtouch-blue-200: #bae6fd;
+  --hugtouch-blue-300: #7dd3fc;
+  --hugtouch-blue-400: #38bdf8;
+  --hugtouch-blue-500: #0ea5e9;
+
+  --hugtouch-green-50: #f0fdf4;
+  --hugtouch-green-100: #dcfce7;
+  --hugtouch-green-200: #bbf7d0;
+  --hugtouch-green-300: #86efac;
+  --hugtouch-green-400: #4ade80;
+  --hugtouch-green-500: #22c55e;
+
+  --hugtouch-purple-50: #faf5ff;
+  --hugtouch-purple-100: #f3e8ff;
+  --hugtouch-purple-200: #e9d5ff;
+  --hugtouch-purple-300: #d8b4fe;
+  --hugtouch-purple-400: #c084fc;
+  --hugtouch-purple-500: #a855f7;
+
+  --hugtouch-yellow-50: #fefce8;
+  --hugtouch-yellow-100: #fef3c7;
+  --hugtouch-yellow-200: #fde68a;
+  --hugtouch-yellow-300: #fcd34d;
+  --hugtouch-yellow-400: #fbbf24;
+  --hugtouch-yellow-500: #f59e0b;
 }
 
 @theme inline {
@@ -22,5 +59,292 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+  line-height: 1.6;
+}
+
+/* 共通の曲線デザインクラス */
+.hugtouch-curved {
+  border-radius: 1.5rem;
+}
+
+.hugtouch-curved-lg {
+  border-radius: 2rem;
+}
+
+.hugtouch-curved-xl {
+  border-radius: 2.5rem;
+}
+
+/* ボタンの改良版 */
+.hugtouch-btn {
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.hugtouch-btn:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.hugtouch-btn-primary {
+  background: linear-gradient(135deg, var(--hugtouch-pink-400), var(--hugtouch-pink-500));
+  color: white;
+}
+
+.hugtouch-btn-primary:hover {
+  background: linear-gradient(135deg, var(--hugtouch-pink-500), var(--hugtouch-pink-600));
+}
+
+/* カードコンポーネント */
+.hugtouch-card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.hugtouch-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* 背景グラデーション */
+.hugtouch-bg-soft {
+  background: linear-gradient(135deg, 
+    var(--hugtouch-pink-50) 0%, 
+    var(--hugtouch-blue-50) 50%, 
+    var(--hugtouch-purple-50) 100%);
+}
+
+.hugtouch-bg-warm {
+  background: linear-gradient(135deg, 
+    var(--hugtouch-pink-100) 0%, 
+    var(--hugtouch-yellow-100) 100%);
+}
+
+.hugtouch-bg-cool {
+  background: linear-gradient(135deg, 
+    var(--hugtouch-blue-100) 0%, 
+    var(--hugtouch-green-100) 100%);
+}
+
+/* フローティングアニメーション */
+.hugtouch-floating {
+  animation: hugtouch-float 6s ease-in-out infinite;
+}
+
+@keyframes hugtouch-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* レスポンシブ対応 */
+/* モバイル（スマートフォン）: 0px - 640px */
+@media (max-width: 640px) {
+  .hugtouch-curved-lg {
+    border-radius: 1rem;
+  }
+  
+  .hugtouch-curved-xl {
+    border-radius: 1.5rem;
+  }
+  
+  /* モバイル専用のレイアウト調整 */
+  .hugtouch-mobile-padding {
+    padding: 1rem;
+  }
+  
+  .hugtouch-mobile-text-lg {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .hugtouch-mobile-text-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .hugtouch-mobile-text-2xl {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  
+  /* モバイル用ボタンサイズ */
+  .hugtouch-btn-mobile {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  /* モバイル用カードスペーシング */
+  .hugtouch-card-mobile {
+    margin-bottom: 1rem;
+  }
+}
+
+/* タブレット: 641px - 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hugtouch-tablet-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hugtouch-tablet-padding {
+    padding: 1.5rem;
+  }
+}
+
+/* デスクトップ: 1025px以上 */
+@media (min-width: 1025px) {
+  .hugtouch-desktop-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .hugtouch-desktop-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* タッチデバイス用のタップ領域確保 */
+@media (hover: none) and (pointer: coarse) {
+  .hugtouch-btn {
+    min-height: 44px; /* Appleのヒューマンインターフェースガイドライン */
+    min-width: 44px;
+  }
+  
+  .hugtouch-tap-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 画面の向き対応 */
+@media (orientation: landscape) and (max-height: 640px) {
+  .hugtouch-landscape-compact {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* 固定CTA */
+.hugtouch-fixed-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: linear-gradient(135deg, var(--hugtouch-pink-400), var(--hugtouch-pink-500));
+  padding: 1rem;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hugtouch-fixed-cta.show {
+  transform: translateY(0);
+}
+
+.hugtouch-floating-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--hugtouch-green-400), var(--hugtouch-green-500));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: hugtouch-pulse 2s infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hugtouch-floating-cta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes hugtouch-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(34, 197, 94, 0.5);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+/* CTA緊急度アニメーション */
+.hugtouch-cta-urgent {
+  animation: hugtouch-urgency 1.5s ease-in-out infinite;
+}
+
+@keyframes hugtouch-urgency {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  75% { transform: scale(0.95); }
+}
+
+/* 価格表示の強調 */
+.hugtouch-price-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.hugtouch-price-highlight::before {
+  content: '💰';
+  position: absolute;
+  top: -8px;
+  left: -20px;
+  font-size: 1.2em;
+  animation: hugtouch-float 3s ease-in-out infinite;
+}
+
+/* モバイル専用CTA調整 */
+@media (max-width: 640px) {
+  .hugtouch-floating-cta {
+    bottom: 1rem;
+    right: 1rem;
+    width: 56px;
+    height: 56px;
+  }
+  
+  .hugtouch-fixed-cta {
+    padding: 0.75rem;
+  }
+}
+
+/* アクセシビリティ配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .hugtouch-floating {
+    animation: none;
+  }
+  
+  .hugtouch-btn:hover,
+  .hugtouch-card:hover {
+    transform: none;
+  }
+  
+  .hugtouch-floating-cta {
+    animation: none;
+  }
+  
+  .hugtouch-cta-urgent {
+    animation: none;
+  }
+  
+  .hugtouch-price-highlight::before {
+    animation: none;
+  }
 }

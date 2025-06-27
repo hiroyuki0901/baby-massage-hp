@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-blue-50">
+    <div className="min-h-screen hugtouch-bg-soft">
       <div className="space-y-12 pb-12">
         {/* メインビジュアルセクション */}
         <section className="relative text-center">
-          <div className="relative h-96 md:h-[500px] w-full overflow-hidden">
+          <div className="relative h-80 sm:h-96 md:h-[500px] w-full overflow-hidden">
             {/* 背景画像 */}
             <div className="absolute inset-0">
               <Image
@@ -28,21 +28,21 @@ export default function Home() {
             </div>
             
             {/* メインコンテンツ */}
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-              <div className="text-6xl mb-6">👶💕</div>
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-                ママの手は、魔法の手。
+            <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+              <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6">👶💕</div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg hugtouch-mobile-text-2xl">
+                ふれるたび "ほっ" と笑顔
               </h1>
-              <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow">
-                ふれあいで育む、親子の深い絆。<br />
-                <span className="text-yellow-200 font-semibold">はぐたっち</span><br />
-                <span className="text-lg">（妊娠期から通えるママと赤ちゃんのふれあいの場）</span>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow px-2">
+                清瀬駅徒歩１分「スタジオラビット」で開催する<br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>ベビーマッサージ教室<br />
+                <span className="text-yellow-200 font-semibold">Hug Touch Sayu</span>
               </p>
-              <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-                <button className="w-full md:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg">
+              <div className="space-y-3 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center px-4 sm:px-0">
+                <button className="hugtouch-btn hugtouch-btn-primary hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
                   体験レッスンを予約する
                 </button>
-                <button className="w-full md:w-auto bg-white border-2 border-white text-pink-500 hover:bg-pink-50 font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg">
+                <button className="hugtouch-btn bg-white border-2 border-white text-pink-500 hover:bg-pink-50 hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
                   LINE で相談する
                 </button>
               </div>
@@ -51,14 +51,14 @@ export default function Home() {
         </section>
 
         {/* 教室についてセクション */}
-        <section className="text-center px-4 py-12">
+        <section className="text-center px-4 py-8 sm:py-12 hugtouch-mobile-padding">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-pink-600 mb-8">「はぐたっち」について</h2>
-            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                「はぐたっち」は、<strong>妊娠期から通えるママと赤ちゃんのふれあいの場</strong>です。<br />
-                肌と肌のふれあいを通じて、赤ちゃんの健やかな心と体の成長を促し、<br />
-                ご家族の笑顔あふれる毎日をサポートします。
+            <h2 className="text-2xl sm:text-3xl font-bold text-pink-600 mb-6 sm:mb-8 hugtouch-mobile-text-xl">「はぐたっち」について</h2>
+            <div className="hugtouch-card p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 hugtouch-floating hugtouch-card-mobile">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
+                「はぐたっち」は、<strong>妊娠期から通えるママと赤ちゃんのふれあいの場</strong>です。<br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>肌と肌のふれあいを通じて、赤ちゃんの健やかな心と体の成長を促し、<br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>ご家族の笑顔あふれる毎日をサポートします。
               </p>
               <div className="text-4xl mb-4">🤰🤱👶✨</div>
               <p className="text-md text-pink-600 font-semibold text-center">
@@ -69,11 +69,11 @@ export default function Home() {
         </section>
 
         {/* レッスン紹介セクション */}
-        <section className="px-4 py-12 bg-gradient-to-r from-pink-50 to-blue-50">
+        <section className="px-4 py-8 sm:py-12 hugtouch-bg-warm hugtouch-curved-xl mx-2 sm:mx-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">人気のレッスン</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8 sm:mb-12 hugtouch-mobile-text-xl">人気のレッスン</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              <div className="hugtouch-card">
                 <div className="relative h-48">
                   <Image
                     src="/lesson-massage.jpg"
@@ -82,13 +82,13 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-pink-600 mb-3">ベビーマッサージ</h3>
-                  <p className="text-gray-600 mb-4">赤ちゃんとの絆を深める優しいマッサージ</p>
-                  <a href="/lessons/baby-massage" className="text-pink-500 font-semibold hover:text-pink-700">詳細を見る →</a>
+                <div className="p-4 sm:p-6 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-pink-600 mb-2 sm:mb-3">ベビーマッサージ</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">赤ちゃんとの絆を深める優しいマッサージ</p>
+                  <a href="/lessons/baby-massage" className="text-pink-500 font-semibold hover:text-pink-700 hugtouch-tap-target">詳細を見る →</a>
                 </div>
               </div>
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+              <div className="hugtouch-card">
                 <div className="relative h-48">
                   <Image
                     src="/lesson-okurumicare.jpg"
@@ -97,13 +97,13 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-blue-600 mb-3">おくるみタッチケア</h3>
-                  <p className="text-gray-600 mb-4">新生児期から始められる優しいケア</p>
+                <div className="p-4 sm:p-6 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-blue-600 mb-2 sm:mb-3">おくるみタッチケア</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">新生児期から始められる優しいケア</p>
                   <a href="/lessons/okurumicare" className="text-blue-500 font-semibold hover:text-blue-700">詳細を見る →</a>
                 </div>
               </div>
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+              <div className="hugtouch-card">
                 <div className="relative h-48">
                   <Image
                     src="/lesson-skincare.jpg"
@@ -112,10 +112,10 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-green-600 mb-3">ベビースキンケア</h3>
-                  <p className="text-gray-600 mb-4">デリケートな赤ちゃんの肌を守る方法</p>
-                  <a href="/lessons/baby-skincare" className="text-green-500 font-semibold hover:text-green-700">詳細を見る →</a>
+                <div className="p-4 sm:p-6 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-2 sm:mb-3">ベビースキンケア</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">デリケートな赤ちゃんの肌を守る方法</p>
+                  <a href="/lessons/skincare" className="text-green-500 font-semibold hover:text-green-700">詳細を見る →</a>
                 </div>
               </div>
             </div>
@@ -125,14 +125,14 @@ export default function Home() {
         {/* お知らせセクション */}
         <section className="px-4 py-12">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-yellow-100 to-orange-100 p-8 rounded-2xl shadow-lg">
+            <div className="hugtouch-bg-warm p-8 hugtouch-curved-lg shadow-lg">
               <h3 className="text-2xl font-bold text-orange-800 text-center mb-6">📢 お知らせ</h3>
               <ul className="space-y-4 max-w-2xl mx-auto">
-                <li className="bg-white p-4 rounded-lg shadow">
+                <li className="bg-white p-4 hugtouch-curved shadow-md hover:shadow-lg transition-shadow duration-300">
                   <span className="font-bold text-orange-600">2025.07.01:</span> 
                   <span className="ml-2 text-gray-700">夏の特別クラスの予約受付を開始しました！</span>
                 </li>
-                <li className="bg-white p-4 rounded-lg shadow">
+                <li className="bg-white p-4 hugtouch-curved shadow-md hover:shadow-lg transition-shadow duration-300">
                   <span className="font-bold text-orange-600">2025.06.20:</span> 
                   <span className="ml-2 text-gray-700">ホームページをリニューアルしました。</span>
                 </li>
@@ -142,7 +142,7 @@ export default function Home() {
         </section>
 
         {/* お客様の声 */}
-        <section className="px-4 py-12 bg-gradient-to-r from-purple-50 to-pink-50">
+        <section className="px-4 py-12 hugtouch-bg-cool hugtouch-curved-xl mx-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-8">お客様の声</h2>
             <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
@@ -160,27 +160,48 @@ export default function Home() {
         </section>
 
         {/* 最終CTA */}
-        <section className="px-4 py-12">
+        <section className="px-4 py-8 sm:py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-r from-pink-200 to-blue-200 p-12 rounded-3xl shadow-xl">
-              <div className="text-5xl mb-6">🌟</div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-6">
+            <div className="hugtouch-bg-warm p-6 sm:p-8 md:p-12 hugtouch-curved-xl shadow-xl hugtouch-floating">
+              <div className="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6">🌟</div>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 hugtouch-mobile-text-xl">
                 体験レッスンで特別な時間を始めませんか？
               </h3>
-              <p className="text-lg text-gray-700 mb-8">
+              <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6">
                 初回限定で特別価格にてご体験いただけます
               </p>
-              <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-                <button className="w-full md:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg text-lg">
+              <div className="hugtouch-price-highlight text-3xl sm:text-4xl font-bold text-pink-600 mb-6 sm:mb-8 hugtouch-cta-urgent">
+                体験レッスン 1,500円
+              </div>
+              <div className="space-y-3 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                <button className="hugtouch-btn hugtouch-btn-primary hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
                   体験レッスンを予約する
                 </button>
-                <button className="w-full md:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg text-lg">
+                <button className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
                   LINE で相談する
                 </button>
               </div>
             </div>
           </div>
         </section>
+      </div>
+      
+      {/* 浮動CTA（LINE） */}
+      <div className="hugtouch-floating-cta" title="LINEで相談する">
+        <span className="text-2xl">💬</span>
+      </div>
+      
+      {/* 固定CTA（体験レッスン） */}
+      <div className="hugtouch-fixed-cta show">
+        <div className="flex items-center justify-between max-w-4xl mx-auto">
+          <div className="text-white">
+            <div className="text-lg font-bold">体験レッスン受付中</div>
+            <div className="text-sm opacity-90">初回限定 1,500円</div>
+          </div>
+          <button className="hugtouch-btn bg-white text-pink-500 hover:bg-gray-50 py-2 px-6 font-bold hugtouch-tap-target">
+            今すぐ予約
+          </button>
+        </div>
       </div>
     </div>
   );

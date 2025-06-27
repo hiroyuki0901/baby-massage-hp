@@ -8,26 +8,27 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-blue-50">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen hugtouch-bg-soft">
+      <div className="container mx-auto px-4 py-6 sm:py-8">
         {/* ヒーローセクション */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 hugtouch-mobile-text-2xl">
             講師紹介・教室の想い
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-3 sm:mb-4 px-2">
             すべてのママと赤ちゃんが笑顔で過ごせるように
           </p>
-          <p className="text-lg text-pink-600 font-semibold">
-            はぐたっち（妊娠期から通えるママと赤ちゃんのふれあいの場）
+          <p className="text-base sm:text-lg text-pink-600 font-semibold px-2">
+            ふれるたび "ほっ" と笑顔<br />
+            清瀬駅徒歩１分「スタジオラビット」で開催
           </p>
         </div>
 
         {/* 講師プロフィール */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <div className="md:flex md:items-center md:space-x-8">
-            <div className="md:w-1/3 mb-6 md:mb-0">
-              <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-lg">
+        <div className="hugtouch-card p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 hugtouch-floating hugtouch-card-mobile">
+          <div className="flex flex-col md:flex-row md:items-center md:space-x-8">
+            <div className="md:w-1/3 mb-4 sm:mb-6 md:mb-0">
+              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-lg">
                 <Image
                   src="/instructor.jpg"
                   alt="講師プロフィール写真"
@@ -37,24 +38,27 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-            <div className="md:w-2/3">
-              <h2 className="text-2xl font-bold text-pink-600 mb-4">講師プロフィール</h2>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">長野 小由奈（ながの さゆな）</h3>
-              <p className="text-gray-600 mb-4">
-                ベビーマッサージインストラクター / 保育士資格保有
+            <div className="md:w-2/3 text-center md:text-left">
+              <h2 className="text-xl sm:text-2xl font-bold text-pink-600 mb-3 sm:mb-4 hugtouch-mobile-text-xl">講師プロフィール</h2>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">Sayu（長野 小由奈）</h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
+                RTA認定ベビーマッサージ・タッチケア講師 / 3児のママ
               </p>
-              <div className="space-y-3 text-gray-700">
+              <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700">
                 <p>
-                  ● 3人の子育てを経験し、自分自身もベビーマッサージに救われた一人
+                  ● <span className="font-semibold text-pink-600">延べ300組</span>の親子をサポートしてきました
                 </p>
                 <p>
-                  ● 清瀬市在住1年目、地域のママたちとの新しい繋がりを大切にしています
+                  ● 3児のママとして、子育ての喜びと悩みを共感できる講師です
                 </p>
                 <p>
-                  ● 「一人じゃないよ」を合言葉に、安心できる空間づくりを心がけています
+                  ● モットー：<span className="font-semibold text-blue-600">「ママの"できた！"を増やすお手伝い」</span>
                 </p>
                 <p>
-                  ● 子育ての経験を活かし、同じママ目線で寄り添うレッスンを提供
+                  ● RTA（ロイヤルセラピスト協会）認定の確かな技術と知識
+                </p>
+                <p>
+                  ● 少人数制でひとりひとりに寄り添う丁寧なレッスン
                 </p>
               </div>
             </div>
@@ -62,7 +66,7 @@ export default function AboutPage() {
         </div>
 
         {/* 教室の想い */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="hugtouch-card p-8 mb-8 hugtouch-floating">
           <h2 className="text-2xl font-bold text-blue-600 mb-6 text-center">教室の想い</h2>
           <div className="max-w-3xl mx-auto">
             <div className="text-gray-700 space-y-4 leading-relaxed">
@@ -81,35 +85,41 @@ export default function AboutPage() {
 
         {/* 教室情報 */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="hugtouch-card p-6">
             <h3 className="text-xl font-bold text-green-600 mb-4">アクセス</h3>
             <div className="space-y-2 text-gray-700">
-              <p>● 清瀬駅南口徒步10分</p>
+              <p>● 清瀬駅北口すぐ「スタジオラビット」</p>
+              <p>● 住所：清瀬市下清戸2-515-6</p>
               <p>● 駐車場あり（無料）</p>
               <p>● ベビーカーでお越しOK</p>
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-bold text-orange-600 mb-4">設備・サービス</h3>
+          <div className="hugtouch-card p-6">
+            <h3 className="text-xl font-bold text-orange-600 mb-4">教室の特徴</h3>
             <div className="space-y-2 text-gray-700">
-              <p>● 授乳・おむつ替えスペース</p>
-              <p>● 給湯器・電子レンジ完備</p>
-              <p>● ベビーベッド・おもちゃあり</p>
+              <p>● 4組までの少人数制</p>
+              <p>● RTAメソッド・賠償保険加入</p>
+              <p>● 泣いても授乳してもOKの"ゆるふわレッスン"</p>
+              <p>● 衛生管理を徹底</p>
             </div>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="text-center bg-gradient-to-r from-pink-100 to-blue-100 rounded-lg p-8">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">
+        <div className="text-center hugtouch-bg-warm hugtouch-curved-lg p-6 sm:p-8">
+          <div className="text-3xl sm:text-4xl mb-4">👋</div>
+          <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">
             お気軽にお問い合わせください
           </h3>
-          <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-            <button className="w-full md:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-              LINE で相談する
+          <div className="hugtouch-price-highlight text-2xl sm:text-3xl font-bold text-green-600 mb-4 sm:mb-6 hugtouch-cta-urgent">
+            体験レッスン 1,500円
+          </div>
+          <div className="space-y-3 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+            <button className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white py-3 px-6 sm:px-8 w-full md:w-auto hugtouch-tap-target">
+              💬 LINE で相談する
             </button>
-            <button className="w-full md:w-auto bg-white border-2 border-green-500 text-green-500 hover:bg-green-50 font-bold py-3 px-8 rounded-full transition duration-300">
-              体験レッスンを予約
+            <button className="hugtouch-btn hugtouch-btn-primary hugtouch-cta-urgent py-3 px-6 sm:px-8 w-full md:w-auto hugtouch-tap-target">
+              🚀 体験レッスンを予約
             </button>
           </div>
         </div>
