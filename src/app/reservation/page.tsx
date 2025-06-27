@@ -8,8 +8,21 @@ export const metadata: Metadata = {
   keywords: 'ベビーマッサージ,予約,申し込み,カレンダー,清瀬,体験レッスン',
   openGraph: {
     title: '予約・お申し込み | はぐたっち',
-    description: 'ベビーマッサージ教室の予約・お申し込み。カレンダーから日程選択可能。',
+    description: 'ベビーマッサージ教室の予約・お申し込み。カレンダーから日程選択可能。清瀬駅徒歩1分。',
     url: 'https://hugtouch-sayu.com/reservation',
+    type: 'website',
+    images: [{
+      url: '/hero-baby-massage.jpg',
+      width: 1200,
+      height: 630,
+      alt: '予約・お申し込み - はぐたっち ベビーマッサージ教室',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '予約・お申し込み | はぐたっち',
+    description: 'ベビーマッサージ教室の予約・お申し込み。カレンダーから日程選択可能。清瀬駅徒歩1分。',
+    images: ['/hero-baby-massage.jpg'],
   },
   alternates: {
     canonical: 'https://hugtouch-sayu.com/reservation',

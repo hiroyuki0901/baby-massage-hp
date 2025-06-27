@@ -1,8 +1,30 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'おくるみタッチケア | はぐたっち - ベビーマッサージ教室',
-  description: '妊娠中から生後3ヶ月まで参加できるおくるみタッチケア。新生児期から始められるやさしいタッチケアで親子の絆を深めます。',
+  title: 'おくるみタッチケア | はぐたっち - 新生児期から始められる',
+  description: '妊娠中から生後3ヶ月まで参加可能。新生児期から始められるやさしいタッチケアで親子の絆を深めます。清瀬駅徒歩1分。',
+  keywords: 'おくるみタッチケア,新生児,妊娠中,清瀬,親子の絆,夜泣き対策,安眠効果',
+  openGraph: {
+    title: 'おくるみタッチケア | はぐたっち',
+    description: '妊娠中から生後3ヶ月まで参加可能。新生児期から始められるやさしいタッチケアで親子の絆を深めます。',
+    url: 'https://hugtouch-sayu.com/lessons/okurumicare',
+    type: 'website',
+    images: [{
+      url: '/lesson-okurumicare.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'おくるみタッチケアレッスンの様子 - はぐたっち',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'おくるみタッチケア | はぐたっち',
+    description: '妊娠中から生後3ヶ月まで参加可能。新生児期から始められるやさしいタッチケアで親子の絆を深めます。',
+    images: ['/lesson-okurumicare.jpg'],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/lessons/okurumicare',
+  },
 }
 
 const benefits = [

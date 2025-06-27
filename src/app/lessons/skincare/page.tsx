@@ -1,8 +1,30 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ベビースキンケア | はぐたっち - ベビーマッサージ教室',
-  description: '生後1ヶ月から始められるベビースキンケア。赤ちゃんのデリケートなお肌を守る正しい方法を学びませんか？',
+  title: 'ベビースキンケア講座 | はぐたっち - 赤ちゃんの肌を守る',
+  description: '生後1ヶ月から始められるベビースキンケア。デリケートなお肌を守る正しい方法を専門講師が指導。清瀬駅徒歩1分。',
+  keywords: 'ベビースキンケア,赤ちゃん,肌トラブル予防,おむつかぶれ,清瀬,アトピー予防,保湿ケア',
+  openGraph: {
+    title: 'ベビースキンケア講座 | はぐたっち',
+    description: '生後1ヶ月から始められるベビースキンケア。デリケートなお肌を守る正しい方法を専門講師が指導。',
+    url: 'https://hugtouch-sayu.com/lessons/skincare',
+    type: 'website',
+    images: [{
+      url: '/lesson-skincare.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'ベビースキンケア講座の様子 - はぐたっち',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ベビースキンケア講座 | はぐたっち',
+    description: '生後1ヶ月から始められるベビースキンケア。デリケートなお肌を守る正しい方法を専門講師が指導。',
+    images: ['/lesson-skincare.jpg'],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/lessons/skincare',
+  },
 }
 
 const benefits = [

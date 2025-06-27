@@ -2,8 +2,30 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'ベビーマッサージ | はぐたっち - ベビーマッサージ教室',
-  description: '赤ちゃんとママ・パパの絆を深めるベビーマッサージレッスン。肌と肌のふれあいで愛情を伝え、赤ちゃんの健やかな成長をサポートします。',
+  title: 'ベビーマッサージレッスン | はぐたっち - 清瀬駅徒歩1分',
+  description: '赤ちゃんとママ・パパの絆を深めるベビーマッサージ。肌と肌のふれあいで愛情を伝え、健やかな成長をサポート。清瀬駅徒歩1分のスタジオで開催。',
+  keywords: 'ベビーマッサージ,清瀬,親子,絆,体験レッスン,夜泣き改善,免疫力向上',
+  openGraph: {
+    title: 'ベビーマッサージレッスン | はぐたっち',
+    description: '赤ちゃんとママ・パパの絆を深めるベビーマッサージ。肌と肌のふれあいで愛情を伝え、健やかな成長をサポート。',
+    url: 'https://hugtouch-sayu.com/lessons/baby-massage',
+    type: 'website',
+    images: [{
+      url: '/lesson-massage.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'ベビーマッサージレッスンの様子 - はぐたっち',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ベビーマッサージレッスン | はぐたっち',
+    description: '赤ちゃんとママ・パパの絆を深めるベビーマッサージ。肌と肌のふれあいで愛情を伝え、健やかな成長をサポート。',
+    images: ['/lesson-massage.jpg'],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/lessons/baby-massage',
+  },
 }
 
 export default function BabyMassagePage() {

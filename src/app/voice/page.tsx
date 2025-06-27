@@ -1,8 +1,30 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'お客様の声 | はぐたっち - ベビーマッサージ教室',
-  description: 'ベビーマッサージレッスンを受講されたママたちの実際の声をご紹介。親子の絆が深まった、赤ちゃんの笑顔が増えたなど、実体験をお聞かせください。',
+  title: 'お客様の声 | はぐたっち - 実際の体験談をご紹介',
+  description: 'ベビーマッサージを体験されたママたちのリアルな声。親子の絆が深まった、夜泣きが改善したなど実体験をご紹介。清瀬駅徒歩1分。',
+  keywords: 'お客様の声,体験談,ベビーマッサージ,効果,夜泣き改善,親子の絆,清瀬,口コミ,レビュー',
+  openGraph: {
+    title: 'お客様の声 | はぐたっち',
+    description: 'ベビーマッサージを体験されたママたちのリアルな声。親子の絆が深まった、夜泣きが改善したなど実体験をご紹介。',
+    url: 'https://hugtouch-sayu.com/voice',
+    type: 'website',
+    images: [{
+      url: '/hero-baby-massage.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'お客様の声 - はぐたっち ベビーマッサージ教室',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'お客様の声 | はぐたっち',
+    description: 'ベビーマッサージを体験されたママたちのリアルな声。親子の絆が深まった、夜泣きが改善したなど実体験をご紹介。',
+    images: ['/hero-baby-massage.jpg'],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/voice',
+  },
 }
 
 const testimonials = [

@@ -2,8 +2,30 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: '資格取得スクール | はぐたっち - ベビーマッサージ教室',
-  description: 'ベビーマッサージインストラクター資格を取得して、あなたも教室を開いてみませんか？初心者から始められる丁寧な指導でプロのインストラクターへ。',
+  title: '資格取得スクール | はぐたっち - インストラクター養成講座',
+  description: 'ベビーマッサージインストラクター資格を取得して、あなたも教室を開いてみませんか？初心者から始められる丁寧な指導でプロへ。清瀬駅徒歩1分。',
+  keywords: '資格取得,インストラクター,ベビーマッサージ,養成講座,清瀬,副業,在宅ワーク,起業',
+  openGraph: {
+    title: '資格取得スクール | はぐたっち',
+    description: 'ベビーマッサージインストラクター資格を取得して、あなたも教室を開いてみませんか？初心者から始められる丁寧な指導でプロへ。',
+    url: 'https://hugtouch-sayu.com/qualification',
+    type: 'website',
+    images: [{
+      url: '/instructor.jpg',
+      width: 1200,
+      height: 630,
+      alt: '資格取得スクール - はぐたっち インストラクター養成講座',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '資格取得スクール | はぐたっち',
+    description: 'ベビーマッサージインストラクター資格を取得して、あなたも教室を開いてみませんか？初心者から始められる丁寧な指導でプロへ。',
+    images: ['/instructor.jpg'],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/qualification',
+  },
 }
 
 const coursePlan = {
