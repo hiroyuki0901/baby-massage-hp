@@ -3,6 +3,15 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'よくある質問 | はぐたっち - ベビーマッサージ教室',
   description: 'ベビーマッサージ教室「はぐたっち」へよくいただくご質問をまとめました。初めての方も安心してお越しください。',
+  keywords: 'ベビーマッサージ,よくある質問,FAQ,清瀬,赤ちゃん,月齢,持ち物',
+  openGraph: {
+    title: 'よくある質問 | はぐたっち',
+    description: 'ベビーマッサージ教室についてのよくある質問と回答。',
+    url: 'https://hugtouch-sayu.com/faq',
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/faq',
+  },
 }
 
 const faqData = [

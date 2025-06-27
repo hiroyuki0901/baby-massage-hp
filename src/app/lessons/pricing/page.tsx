@@ -1,8 +1,26 @@
 import { Metadata } from 'next'
+import ReservationButton from '@/components/ReservationButton'
 
 export const metadata: Metadata = {
   title: '料金・スケジュール | はぐたっち - ベビーマッサージ教室',
   description: 'ベビーマッサージ教室「はぐたっち」の各レッスン料金とスケジュールをご案内。体験レッスンや回数券など、お得なプランもあります。',
+  keywords: 'ベビーマッサージ,料金,スケジュール,体験レッスン,清瀬,価格',
+  openGraph: {
+    title: '料金・スケジュール | はぐたっち',
+    description: 'ベビーマッサージ教室の料金プランとスケジュール。体験レッスン1,500円から。',
+    url: 'https://hugtouch-sayu.com/lessons/pricing',
+    images: [
+      {
+        url: 'https://hugtouch-sayu.com/lesson-massage.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'ベビーマッサージレッスン料金',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/lessons/pricing',
+  },
 }
 
 const lessonPlans = [
@@ -126,8 +144,65 @@ function getBadgeClasses(color: string) {
 }
 
 export default function PricingPage() {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "ベビーマッサージレッスン",
+    "description": "清瀬駅徒歩1分で開催するベビーマッサージ教室の料金プラン",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "はぐたっち",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "下清戸2-515-6 スタジオラビット",
+        "addressLocality": "清瀬市",
+        "addressRegion": "東京都",
+        "postalCode": "204-0003",
+        "addressCountry": "JP"
+      }
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "体験レッスン",
+        "description": "初回限定のベビーマッサージ体験レッスン（60分）",
+        "price": "1500",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "category": "ベビーマッサージ"
+      },
+      {
+        "@type": "Offer",
+        "name": "ベーシック3回コース",
+        "description": "全身マッサージを習得する3回コース（60分×3回）",
+        "price": "7500",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "category": "ベビーマッサージ"
+      },
+      {
+        "@type": "Offer",
+        "name": "プライベートレッスン",
+        "description": "個別対応レッスン、兄弟同席OK（75分）",
+        "price": "4000",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "category": "ベビーマッサージ"
+      }
+    ],
+    "areaServed": "東京都清瀬市"
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-orange-50">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-orange-50">
       <div className="container mx-auto px-4 py-8">
         {/* ヒーローセクション */}
         <div className="text-center mb-12">
@@ -175,9 +250,12 @@ export default function PricingPage() {
                     ))}
                   </ul>
                   
-                  <button className={`w-full ${getBadgeClasses(plan.color)} hover:opacity-90 text-white font-bold py-3 px-6 rounded-full transition duration-300 hugtouch-tap-target ${plan.popular ? 'hugtouch-cta-urgent' : ''}`}>
+                  <ReservationButton 
+                    lessonType={plan.title === '体験会' ? 'trial' : plan.title === 'ベーシック3回' ? 'basic' : 'private'}
+                    className={`w-full ${getBadgeClasses(plan.color)} hover:opacity-90 text-white font-bold py-3 px-6 rounded-full transition duration-300 hugtouch-tap-target ${plan.popular ? 'hugtouch-cta-urgent' : ''}`}
+                  >
                     {plan.popular ? '人気！今すぐ予約' : '予約する'}
-                  </button>
+                  </ReservationButton>
                 </div>
               </div>
             ))}
@@ -197,9 +275,12 @@ export default function PricingPage() {
                 </div>
                 <p className="text-sm text-orange-600 font-semibold mb-2">対象: {program.target}</p>
                 <p className="text-gray-700 mb-4">{program.description}</p>
-                <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                <ReservationButton 
+                  lessonType={program.title === 'おくるみタッチケア' ? 'okurumicare' : 'skincare'}
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition duration-300"
+                >
                   予約する
-                </button>
+                </ReservationButton>
               </div>
             ))}
           </div>
@@ -307,15 +388,22 @@ export default function PricingPage() {
             LINE友だち追加で<span className="font-bold text-orange-600">さらに特典あり</span>！
           </p>
           <div className="space-y-3 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-            <button className="hugtouch-btn hugtouch-btn-primary hugtouch-cta-urgent py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
+            <ReservationButton 
+              lessonType="trial"
+              className="hugtouch-btn hugtouch-btn-primary hugtouch-cta-urgent py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target"
+            >
               🚀 今すぐ体験予約
-            </button>
-            <button className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
+            </ReservationButton>
+            <ReservationButton 
+              lessonType="trial"
+              className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target"
+            >
               💬 LINE で相談する
-            </button>
+            </ReservationButton>
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

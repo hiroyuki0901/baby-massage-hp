@@ -1,14 +1,76 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import ReservationButton from '@/components/ReservationButton'
 
 export const metadata: Metadata = {
   title: '講師紹介・教室の想い | はぐたっち - ベビーマッサージ教室',
   description: 'ベビーマッサージ教室「はぐたっち」の講師紹介と教室への想い。親子の絆を大切にし、一組一組に寄り添ったレッスンを心がけています。',
+  keywords: 'ベビーマッサージ,講師紹介,RTA認定,長野小由奈,Sayu,清瀬,3児のママ,延べ300組',
+  openGraph: {
+    title: '講師紹介・教室の想い | はぐたっち',
+    description: 'RTA認定講師 Sayu（長野 小由奈）の紹介。3児のママとして延べ300組の親子をサポート。',
+    url: 'https://hugtouch-sayu.com/about',
+    images: [
+      {
+        url: 'https://hugtouch-sayu.com/instructor.jpg',
+        width: 1200,
+        height: 630,
+        alt: '講師 Sayu（長野 小由奈）',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/about',
+  },
 }
 
 export default function AboutPage() {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "長野 小由奈",
+    "alternateName": "Sayu",
+    "jobTitle": "RTA認定ベビーマッサージ・タッチケア講師",
+    "description": "3児のママとして、延べ300組の親子をサポートしてきたベビーマッサージ講師。清瀬駅徒歩1分のスタジオラビットでレッスンを開催。",
+    "image": "https://hugtouch-sayu.com/instructor.jpg",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "はぐたっち",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "下清戸2-515-6 スタジオラビット",
+        "addressLocality": "清瀬市",
+        "addressRegion": "東京都",
+        "postalCode": "204-0003",
+        "addressCountry": "JP"
+      }
+    },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "RTA認定ベビーマッサージ講師",
+        "credentialCategory": "certification"
+      },
+      {
+        "@type": "EducationalOccupationalCredential", 
+        "name": "RTA認定タッチケア講師",
+        "credentialCategory": "certification"
+      }
+    ],
+    "knowsAbout": ["ベビーマッサージ", "タッチケア", "おくるみタッチケア", "ベビースキンケア", "育児サポート"],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "ロイヤルセラピスト協会（RTA）"
+    }
+  };
+
   return (
-    <div className="min-h-screen hugtouch-bg-soft">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <div className="min-h-screen hugtouch-bg-soft">
       <div className="container mx-auto px-4 py-6 sm:py-8">
         {/* ヒーローセクション */}
         <div className="text-center mb-8 sm:mb-12">
@@ -35,6 +97,8 @@ export default function AboutPage() {
                   width={192}
                   height={192}
                   className="object-cover w-full h-full"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
                 />
               </div>
             </div>
@@ -115,15 +179,22 @@ export default function AboutPage() {
             体験レッスン 1,500円
           </div>
           <div className="space-y-3 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-            <button className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white py-3 px-6 sm:px-8 w-full md:w-auto hugtouch-tap-target">
+            <ReservationButton 
+              lessonType="trial"
+              className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white py-3 px-6 sm:px-8 w-full md:w-auto hugtouch-tap-target"
+            >
               💬 LINE で相談する
-            </button>
-            <button className="hugtouch-btn hugtouch-btn-primary hugtouch-cta-urgent py-3 px-6 sm:px-8 w-full md:w-auto hugtouch-tap-target">
+            </ReservationButton>
+            <ReservationButton 
+              lessonType="trial"
+              className="hugtouch-btn hugtouch-btn-primary hugtouch-cta-urgent py-3 px-6 sm:px-8 w-full md:w-auto hugtouch-tap-target"
+            >
               🚀 体験レッスンを予約
-            </button>
+            </ReservationButton>
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

@@ -1,205 +1,174 @@
 import { Metadata } from 'next'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'お問い合わせ・予約 | はぐたっち - ベビーマッサージ教室',
-  description: 'ベビーマッサージ教室「はぐたっち」へのお問い合わせ・予約フォーム。LINEでのコンタクトも可能です。体験レッスンの予約もこちらから。',
+  title: 'お問い合わせ | はぐたっち - ベビーマッサージ教室',
+  description: 'ベビーマッサージ教室「はぐたっち」へのお問い合わせページ。レッスンのご予約やご質問など、お気軽にお問い合わせください。',
+  keywords: 'お問い合わせ,ベビーマッサージ,予約,相談,清瀬,質問',
+  openGraph: {
+    title: 'お問い合わせ | はぐたっち',
+    description: 'ベビーマッサージ教室へのお問い合わせ・ご相談はこちらから。',
+    url: 'https://hugtouch-sayu.com/contact',
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com/contact',
+  },
 }
 
 export default function ContactPage() {
+  const contactJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "お問い合わせ - はぐたっち",
+    "description": "ベビーマッサージ教室「はぐたっち」へのお問い合わせページ",
+    "url": "https://hugtouch-sayu.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "はぐたっち",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+81-xxx-xxxx-xxxx",
+        "contactType": "customer service",
+        "areaServed": "JP",
+        "availableLanguage": "Japanese"
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
-      <div className="container mx-auto px-4 py-8">
-        {/* ヒーローセクション */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            お問い合わせ・予約
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            お気軽にお問い合わせください。LINEでのやりとりも大歓迎です。
-          </p>
-        </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
+      />
+      <div className="min-h-screen hugtouch-bg-soft">
+        <div className="container mx-auto px-4 py-8">
+          {/* ヒーローセクション */}
+          <div className="text-center mb-12">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+              お問い合わせ
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+              ご質問やご相談など、お気軽にお問い合わせください
+            </p>
+            <div className="text-4xl mb-6">💬📞✉️</div>
+          </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* お問い合わせ方法 */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* LINEでのお問い合わせ */}
-            <div className="bg-green-500 text-white rounded-lg p-8 text-center">
-              <div className="text-4xl mb-4">📱</div>
-              <h2 className="text-2xl font-bold mb-4">LINE でお問い合わせ</h2>
-              <p className="mb-6 text-green-100">
-                最もスピーディーなお問い合わせ方法です。写真や動画も送信できます。
+          {/* お問い合わせ方法の選択 */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="hugtouch-card p-6 text-center">
+              <div className="text-3xl mb-4">📝</div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">フォーム</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                24時間受付<br />
+                詳細なご相談に
               </p>
-              <button className="bg-white text-green-500 font-bold py-3 px-8 rounded-full hover:bg-green-50 transition duration-300 w-full">
-                LINE で問い合わせる
-              </button>
-              <p className="text-sm text-green-200 mt-3">
-                ※ タップして友だち追加後、メッセージをお送りください
-              </p>
+              <div className="text-pink-600 font-semibold">推奨</div>
             </div>
-
-            {/* 電話でのお問い合わせ */}
-            <div className="bg-blue-500 text-white rounded-lg p-8 text-center">
-              <div className="text-4xl mb-4">📞</div>
-              <h2 className="text-2xl font-bold mb-4">電話でお問い合わせ</h2>
-              <p className="mb-6 text-blue-100">
-                直接お話ししたい方はこちら。不在の場合は折り返しいたします。
+            
+            <div className="hugtouch-card p-6 text-center">
+              <div className="text-3xl mb-4">💬</div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">LINE</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                チャット形式で<br />
+                気軽にご質問
               </p>
-              <div className="bg-white text-blue-500 font-bold py-3 px-8 rounded-full mb-4">
-                042-XXX-XXXX
-              </div>
-              <p className="text-sm text-blue-200">
-                受付時間: 9:00～18:00（土日祉日を除く）
+              <a 
+                href="https://lin.ee/YOUR_LINE_ID" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-green-600 font-semibold hover:text-green-800"
+              >
+                友だち追加
+              </a>
+            </div>
+            
+            <div className="hugtouch-card p-6 text-center">
+              <div className="text-3xl mb-4">📞</div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">お電話</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                平日 10:00-15:00<br />
+                直接お話しできます
               </p>
+              <a 
+                href="tel:xxx-xxxx-xxxx" 
+                className="text-blue-600 font-semibold hover:text-blue-800"
+              >
+                xxx-xxxx-xxxx
+              </a>
             </div>
           </div>
 
           {/* お問い合わせフォーム */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              お問い合わせフォーム
-            </h2>
-            
-            <form className="space-y-6">
-              {/* お名前 */}
-              <div>
-                <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
-                  お名前 <span className="text-red-500">*</span>
-                </label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-                  placeholder="山田 花子"
-                  required
-                />
-              </div>
+          <ContactForm />
 
-              {/* メールアドレス */}
-              <div>
-                <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-                  メールアドレス <span className="text-red-500">*</span>
-                </label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-                  placeholder="example@email.com"
-                  required
-                />
-              </div>
-
-              {/* 電話番号 */}
-              <div>
-                <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
-                  電話番号
-                </label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-                  placeholder="090-1234-5678"
-                />
-              </div>
-
-              {/* 赤ちゃんの情報 */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-700 font-bold mb-2" htmlFor="babyAge">
-                    赤ちゃんの月齢
-                  </label>
-                  <select 
-                    id="babyAge" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-                  >
-                    <option value="">選択してください</option>
-                    <option value="妹娠中">妹娠中</option>
-                    <option value="0ヶ月">新生児（0ヶ月）</option>
-                    <option value="1ヶ月">1ヶ月</option>
-                    <option value="2ヶ月">2ヶ月</option>
-                    <option value="3ヶ月">3ヶ月</option>
-                    <option value="4ヶ月">4ヶ月</option>
-                    <option value="5ヶ月">5ヶ月</option>
-                    <option value="6ヶ月">6ヶ月</option>
-                    <option value="7ヶ月以上">7ヶ月以上</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-bold mb-2" htmlFor="inquiryType">
-                    お問い合わせ内容
-                  </label>
-                  <select 
-                    id="inquiryType" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-                  >
-                    <option value="">選択してください</option>
-                    <option value="体験レッスン">体験レッスンの予約</option>
-                    <option value="ベビーマッサージ">ベビーマッサージレッスン</option>
-                    <option value="おくるみタッチケア">おくるみタッチケア</option>
-                    <option value="ベビースキンケア">ベビースキンケア</option>
-                    <option value="資格取得">資格取得について</option>
-                    <option value="その他">その他</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* メッセージ */}
-              <div>
-                <label className="block text-gray-700 font-bold mb-2" htmlFor="message">
-                  メッセージ <span className="text-red-500">*</span>
-                </label>
-                <textarea 
-                  id="message" 
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500"
-                  placeholder="ご質問やご相談内容をお書きください。体験レッスンを希望の場合は、ご希望の日時もあわせてお知らせください。"
-                  required
-                />
-              </div>
-
-              {/* 送信ボタン */}
-              <div className="text-center">
-                <button 
-                  type="submit"
-                  className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-12 rounded-full transition duration-300"
-                >
-                  メッセージを送信する
-                </button>
-              </div>
-              
-              <p className="text-sm text-gray-600 text-center">
-                ※ 送信後24時間以内に返信いたします。土日祕日は翌営業日の返信となります。
+          {/* よくある質問への誘導 */}
+          <div className="mt-12 text-center">
+            <div className="hugtouch-card p-6 sm:p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
+                💡 まずはよくある質問をご確認ください
+              </h3>
+              <p className="text-gray-600 mb-6">
+                多くのご質問にお答えしています。お問い合わせ前にぜひご覧ください。
               </p>
-            </form>
+              <a
+                href="/faq"
+                className="hugtouch-btn hugtouch-btn-primary py-3 px-6 hugtouch-tap-target"
+              >
+                よくある質問を見る
+              </a>
+            </div>
           </div>
 
-          {/* アクセス情報 */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mt-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              教室へのアクセス
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-bold text-gray-700 mb-4">教室情報</h3>
-                <div className="space-y-2 text-gray-600">
-                  <p>🏠 東京都清瀬市松山X-X-X</p>
-                  <p>🚆 清瀬駅南口徒步10分</p>
-                  <p>🚗 駐車場あり（無料・3台）</p>
-                  <p>🚼 ベビーカーでのお越しOK</p>
-                </div>
+          {/* 教室情報 */}
+          <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="hugtouch-card p-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <span className="text-2xl mr-2">📍</span>
+                教室情報
+              </h3>
+              <div className="space-y-2 text-gray-700">
+                <p><strong>教室名：</strong>はぐたっち（Hug Touch Sayu）</p>
+                <p><strong>講師：</strong>Sayu（長野 小由奈）</p>
+                <p><strong>開催場所：</strong>清瀬駅北口すぐ「スタジオラビット」</p>
+                <p><strong>住所：</strong>清瀬市下清戸2-515-6</p>
+                <p><strong>駐車場：</strong>あり（無料）</p>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-700 mb-4">熶境・設備</h3>
-                <div className="space-y-2 text-gray-600">
-                  <p>• 授乳・おむつ替えスペース</p>
-                  <p>• 給湯器・電子レンジ完備</p>
-                  <p>• ベビーベッド・おもちゃあり</p>
-                  <p>• 空気清浄機・加湿器完備</p>
-                </div>
+            </div>
+
+            <div className="hugtouch-card p-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <span className="text-2xl mr-2">⏰</span>
+                営業時間
+              </h3>
+              <div className="space-y-2 text-gray-700">
+                <p><strong>レッスン時間：</strong></p>
+                <ul className="ml-4 space-y-1">
+                  <li>• 月〜金：10:30-11:30、13:30-14:30</li>
+                  <li>• 土日祝：要相談</li>
+                </ul>
+                <p><strong>お問い合わせ受付：</strong></p>
+                <ul className="ml-4 space-y-1">
+                  <li>• フォーム：24時間</li>
+                  <li>• LINE：24時間</li>
+                  <li>• 電話：平日 10:00-15:00</li>
+                </ul>
               </div>
             </div>
           </div>
+
+          {/* プライバシーポリシーへの誘導 */}
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-600">
+              お問い合わせの際は、
+              <a href="/privacy" className="text-pink-600 hover:text-pink-800 underline">
+                プライバシーポリシー
+              </a>
+              をご確認ください。
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

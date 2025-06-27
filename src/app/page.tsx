@@ -1,8 +1,128 @@
 import Image from "next/image";
+import { Metadata } from 'next';
+import ReservationButton from '@/components/ReservationButton';
+
+export const metadata: Metadata = {
+  title: 'はぐたっち - 清瀬駅徒歩1分のベビーマッサージ教室 | 体験レッスン1,500円',
+  description: '清瀬駅北口徒歩1分「スタジオラビット」で開催するベビーマッサージ教室。RTA認定講師による丁寧なレッスン。体験レッスン1,500円で開催中。妊娠期から通える安心の教室です。',
+  keywords: 'ベビーマッサージ,清瀬,体験レッスン,RTA認定,妊娠期,産後,親子,ふれあい,スタジオラビット',
+  authors: [{ name: 'Sayu（長野 小由奈）', url: 'https://hugtouch-sayu.com' }],
+  creator: 'Sayu（長野 小由奈）',
+  publisher: 'はぐたっち',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'はぐたっち - 清瀬駅徒歩1分のベビーマッサージ教室',
+    description: '清瀬駅北口徒歩1分「スタジオラビット」で開催するベビーマッサージ教室。RTA認定講師による丁寧なレッスン。',
+    url: 'https://hugtouch-sayu.com',
+    siteName: 'はぐたっち',
+    images: [
+      {
+        url: 'https://hugtouch-sayu.com/hero-baby-massage.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'ベビーマッサージ教室はぐたっち',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'はぐたっち - 清瀬駅徒歩1分のベビーマッサージ教室',
+    description: '清瀬駅北口徒歩1分「スタジオラビット」で開催するベビーマッサージ教室。',
+    images: ['https://hugtouch-sayu.com/hero-baby-massage.jpg'],
+  },
+  alternates: {
+    canonical: 'https://hugtouch-sayu.com',
+  },
+  verification: {
+    google: 'your-google-verification-code',
+  },
+};
 
 export default function Home() {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://hugtouch-sayu.com",
+    "name": "はぐたっち（Hug Touch Sayu）",
+    "alternateName": "ベビーマッサージ教室はぐたっち",
+    "description": "清瀬駅北口徒歩1分で開催するベビーマッサージ教室。RTA認定講師による丁寧なレッスン。",
+    "url": "https://hugtouch-sayu.com",
+    "telephone": "+81-xxx-xxxx-xxxx",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "下清戸2-515-6 スタジオラビット",
+      "addressLocality": "清瀬市",
+      "addressRegion": "東京都",
+      "postalCode": "204-0003",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.78373,
+      "longitude": 139.5264
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "10:00",
+        "closes": "15:00"
+      }
+    ],
+    "serviceArea": {
+      "@type": "Place",
+      "name": "清瀬市、東久留米市、小平市、西東京市"
+    },
+    "priceRange": "¥1500-¥7500",
+    "image": [
+      "https://hugtouch-sayu.com/hero-baby-massage.jpg",
+      "https://hugtouch-sayu.com/instructor.jpg"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "長野 小由奈",
+      "alternateName": "Sayu",
+      "jobTitle": "RTA認定ベビーマッサージ・タッチケア講師",
+      "description": "3児のママとして、延べ300組の親子をサポートしてきたベビーマッサージ講師"
+    },
+    "areaServed": "東京都清瀬市",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "ベビーマッサージレッスン",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "体験レッスン",
+            "description": "初回限定のベビーマッサージ体験レッスン"
+          },
+          "price": "1500",
+          "priceCurrency": "JPY"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "ベーシック3回コース",
+            "description": "全身マッサージを習得する3回コース"
+          },
+          "price": "7500",
+          "priceCurrency": "JPY"
+        }
+      ]
+    }
+  };
+
   return (
-    <div className="min-h-screen hugtouch-bg-soft">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <div className="min-h-screen hugtouch-bg-soft">
       <div className="space-y-12 pb-12">
         {/* メインビジュアルセクション */}
         <section className="relative text-center">
@@ -15,6 +135,7 @@ export default function Home() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-pink-200/80 to-blue-200/80"></div>
             </div>
@@ -39,12 +160,18 @@ export default function Home() {
                 <span className="text-yellow-200 font-semibold">Hug Touch Sayu</span>
               </p>
               <div className="space-y-3 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center px-4 sm:px-0">
-                <button className="hugtouch-btn hugtouch-btn-primary hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
+                <ReservationButton 
+                  lessonType="trial" 
+                  className="hugtouch-btn hugtouch-btn-primary hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target"
+                >
                   体験レッスンを予約する
-                </button>
-                <button className="hugtouch-btn bg-white border-2 border-white text-pink-500 hover:bg-pink-50 hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
+                </ReservationButton>
+                <ReservationButton 
+                  lessonType="trial" 
+                  className="hugtouch-btn bg-white border-2 border-white text-pink-500 hover:bg-pink-50 hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target"
+                >
                   LINE で相談する
-                </button>
+                </ReservationButton>
               </div>
             </div>
           </div>
@@ -80,6 +207,8 @@ export default function Home() {
                     alt="ベビーマッサージの様子"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-4 sm:p-6 text-center">
@@ -95,6 +224,8 @@ export default function Home() {
                     alt="おくるみタッチケアの様子"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-4 sm:p-6 text-center">
@@ -110,6 +241,8 @@ export default function Home() {
                     alt="ベビースキンケアの様子"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-4 sm:p-6 text-center">
@@ -174,12 +307,18 @@ export default function Home() {
                 体験レッスン 1,500円
               </div>
               <div className="space-y-3 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-                <button className="hugtouch-btn hugtouch-btn-primary hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
+                <ReservationButton 
+                  lessonType="trial" 
+                  className="hugtouch-btn hugtouch-btn-primary hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target"
+                >
                   体験レッスンを予約する
-                </button>
-                <button className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target">
+                </ReservationButton>
+                <ReservationButton 
+                  lessonType="trial" 
+                  className="hugtouch-btn bg-green-500 hover:bg-green-600 text-white hugtouch-btn-mobile py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg w-full md:w-auto hugtouch-tap-target"
+                >
                   LINE で相談する
-                </button>
+                </ReservationButton>
               </div>
             </div>
           </div>
@@ -198,11 +337,15 @@ export default function Home() {
             <div className="text-lg font-bold">体験レッスン受付中</div>
             <div className="text-sm opacity-90">初回限定 1,500円</div>
           </div>
-          <button className="hugtouch-btn bg-white text-pink-500 hover:bg-gray-50 py-2 px-6 font-bold hugtouch-tap-target">
+          <ReservationButton 
+            lessonType="trial" 
+            className="hugtouch-btn bg-white text-pink-500 hover:bg-gray-50 py-2 px-6 font-bold hugtouch-tap-target"
+          >
             今すぐ予約
-          </button>
+          </ReservationButton>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
