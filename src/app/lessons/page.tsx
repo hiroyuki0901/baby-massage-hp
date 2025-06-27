@@ -9,9 +9,12 @@ export default function LessonsPage() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+        <h1 className="text-3xl font-bold text-center mb-4 text-gray-800">
           レッスン一覧
         </h1>
+        <p className="text-center text-lg text-pink-600 font-semibold mb-8">
+          妊娠期から産後まで、長くサポートする各種レッスン
+        </p>
         
         <div className="grid md:grid-cols-3 gap-8">
           {/* ベビーマッサージ */}

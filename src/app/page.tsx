@@ -10,7 +10,7 @@ export default function Home() {
             {/* 背景画像 */}
             <div className="absolute inset-0">
               <Image
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop&crop=center"
+                src="/hero-baby-massage.jpg"
                 alt="赤ちゃんとママの温かいふれあいの様子"
                 fill
                 className="object-cover"
@@ -35,7 +35,8 @@ export default function Home() {
               </h1>
               <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow">
                 ふれあいで育む、親子の深い絆。<br />
-                <span className="text-yellow-200 font-semibold">はぐたっち</span> ベビーマッサージ教室
+                <span className="text-yellow-200 font-semibold">はぐたっち</span><br />
+                <span className="text-lg">（妊娠期から通えるママと赤ちゃんのふれあいの場）</span>
               </p>
               <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
                 <button className="w-full md:w-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-lg">
@@ -55,11 +56,14 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-pink-600 mb-8">「はぐたっち」について</h2>
             <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                「はぐたっち」は、赤ちゃんとママ・パパのための特別な場所です。<br />
+                「はぐたっち」は、<strong>妊娠期から通えるママと赤ちゃんのふれあいの場</strong>です。<br />
                 肌と肌のふれあいを通じて、赤ちゃんの健やかな心と体の成長を促し、<br />
                 ご家族の笑顔あふれる毎日をサポートします。
               </p>
-              <div className="text-4xl mb-4">🤱👶✨</div>
+              <div className="text-4xl mb-4">🤰🤱👶✨</div>
+              <p className="text-md text-pink-600 font-semibold text-center">
+                プレママから産後まで、長くお付き合いできる安心の教室です
+              </p>
             </div>
           </div>
         </section>
@@ -72,7 +76,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center"
+                    src="/lesson-massage.jpg"
                     alt="ベビーマッサージの様子"
                     fill
                     className="object-cover"
@@ -87,7 +91,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=400&h=300&fit=crop&crop=center"
+                    src="/lesson-okurumicare.jpg"
                     alt="おくるみタッチケアの様子"
                     fill
                     className="object-cover"
@@ -102,7 +106,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1587393855524-087f83d95bc9?w=400&h=300&fit=crop&crop=center"
+                    src="/lesson-skincare.jpg"
                     alt="ベビースキンケアの様子"
                     fill
                     className="object-cover"

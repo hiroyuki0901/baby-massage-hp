@@ -15,8 +15,11 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
             講師紹介・教室の想い
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4">
             すべてのママと赤ちゃんが笑顔で過ごせるように
+          </p>
+          <p className="text-lg text-pink-600 font-semibold">
+            はぐたっち（妊娠期から通えるママと赤ちゃんのふれあいの場）
           </p>
         </div>
 
@@ -26,7 +29,7 @@ export default function AboutPage() {
             <div className="md:w-1/3 mb-6 md:mb-0">
               <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1594824706885-f3e07626bb3c?w=300&h=300&fit=crop&crop=face"
+                  src="/instructor.jpg"
                   alt="講師プロフィール写真"
                   width={192}
                   height={192}
@@ -36,19 +39,22 @@ export default function AboutPage() {
             </div>
             <div className="md:w-2/3">
               <h2 className="text-2xl font-bold text-pink-600 mb-4">講師プロフィール</h2>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">田中 花子（仮名）</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">長野 小由奈（ながの さゆな）</h3>
               <p className="text-gray-600 mb-4">
                 ベビーマッサージインストラクター / 保育士資格保有
               </p>
               <div className="space-y-3 text-gray-700">
                 <p>
-                  ● 2人の子育てを経験し、自分自身もベビーマッサージに救われた一人
+                  ● 3人の子育てを経験し、自分自身もベビーマッサージに救われた一人
                 </p>
                 <p>
-                  ● 清瀬市在住15年、地域のママたちとの繋がりを大切にしています
+                  ● 清瀬市在住1年目、地域のママたちとの新しい繋がりを大切にしています
                 </p>
                 <p>
                   ● 「一人じゃないよ」を合言葉に、安心できる空間づくりを心がけています
+                </p>
+                <p>
+                  ● 子育ての経験を活かし、同じママ目線で寄り添うレッスンを提供
                 </p>
               </div>
             </div>

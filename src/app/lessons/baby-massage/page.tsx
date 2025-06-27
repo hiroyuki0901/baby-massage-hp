@@ -14,7 +14,7 @@ export default function BabyMassagePage() {
         <div className="relative mb-12">
           <div className="relative h-64 md:h-80 w-full overflow-hidden rounded-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=400&fit=crop&crop=center"
+              src="/lesson-massage.jpg"
               alt="ベビーマッサージレッスンの様子"
               fill
               className="object-cover"
