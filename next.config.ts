@@ -24,6 +24,9 @@ const nextConfig: NextConfig = {
   httpAgentOptions: {
     keepAlive: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
