@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'ベビースキンケア講座 | はぐたっち - 赤ちゃんの肌を守る',
@@ -219,9 +220,11 @@ export default function SkincarePage() {
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/2">
-                  <img 
+                  <Image 
                     src="/lesson-skincare.jpg" 
                     alt="ベビースキンケアの様子"
+                    width={400}
+                    height={256}
                     className="w-full h-64 object-cover rounded-xl"
                   />
                 </div>

@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'おくるみタッチケア | はぐたっち - 新生児期から始められる',
@@ -162,9 +163,11 @@ export default function OkurumiCarePage() {
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/2">
-                  <img 
+                  <Image 
                     src="/lesson-okurumicare.jpg" 
                     alt="おくるみタッチケアの様子"
+                    width={400}
+                    height={256}
                     className="w-full h-64 object-cover rounded-xl"
                   />
                 </div>

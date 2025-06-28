@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: '資格取得スクール | はぐたっち - インストラクター養成講座',

@@ -152,7 +152,7 @@ export default function Home() {
             <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
               <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6">👶💕</div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg hugtouch-mobile-text-2xl">
-                ふれるたび "ほっ" と笑顔
+                ふれるたび &quot;ほっ&quot; と笑顔
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow px-2">
                 清瀬駅徒歩１分「スタジオラビット」で開催する<br className="hidden sm:block" />
@@ -281,8 +281,8 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
               <div className="text-4xl mb-4">💬</div>
               <p className="text-lg text-gray-700 italic mb-4">
-                "初めての子育てで不安でしたが、マッサージを始めてから息子がよく笑うようになりました。
-                私自身もリラックスできて、他のママさんたちとお話できるのも楽しみです。"
+                &quot;初めての子育てで不安でしたが、マッサージを始めてから息子がよく笑うようになりました。
+                私自身もリラックスできて、他のママさんたちとお話できるのも楽しみです。&quot;
               </p>
               <p className="text-sm text-gray-500">M.Kさん（4ヶ月・清瀬市）</p>
             </div>

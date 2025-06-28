@@ -21,8 +21,8 @@ export default function ReservationCalendar({
     script.onload = () => {
       setIsLoaded(true)
       // STORESウィジェットの初期化（実際のAPI仕様に応じて調整）
-      if ((window as any).STORESWidget) {
-        (window as any).STORESWidget.init({
+      if ((window as Window & { STORESWidget?: { init: (config: { storeId: string; containerId: string }) => void } }).STORESWidget) {
+        (window as Window & { STORESWidget: { init: (config: { storeId: string; containerId: string }) => void } }).STORESWidget.init({
           storeId: storeId,
           containerId: 'stores-reservation-widget'
         })

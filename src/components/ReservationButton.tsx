@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { getReservationUrl, getLineUrl, getLessonName, RESERVATION_CONFIG } from '@/config/reservation'
+import { getReservationUrl, getLineUrl } from '@/config/reservation'
 import { analytics } from '@/components/GoogleAnalytics'
 
 interface ReservationButtonProps {

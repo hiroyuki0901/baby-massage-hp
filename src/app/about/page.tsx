@@ -81,7 +81,7 @@ export default function AboutPage() {
             すべてのママと赤ちゃんが笑顔で過ごせるように
           </p>
           <p className="text-base sm:text-lg text-pink-600 font-semibold px-2">
-            ふれるたび "ほっ" と笑顔<br />
+            ふれるたび &quot;ほっ&quot; と笑顔<br />
             清瀬駅徒歩１分「スタジオラビット」で開催
           </p>
         </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                   ● 3児のママとして、子育ての喜びと悩みを共感できる講師です
                 </p>
                 <p>
-                  ● モットー：<span className="font-semibold text-blue-600">「ママの"できた！"を増やすお手伝い」</span>
+                  ● モットー：<span className="font-semibold text-blue-600">「ママの&quot;できた！&quot;を増やすお手伝い」</span>
                 </p>
                 <p>
                   ● RTA（ロイヤルセラピスト協会）認定の確かな技術と知識
@@ -163,7 +163,7 @@ export default function AboutPage() {
             <div className="space-y-2 text-gray-700">
               <p>● 4組までの少人数制</p>
               <p>● RTAメソッド・賠償保険加入</p>
-              <p>● 泣いても授乳してもOKの"ゆるふわレッスン"</p>
+              <p>● 泣いても授乳してもOKの&quot;ゆるふわレッスン&quot;</p>
               <p>● 衛生管理を徹底</p>
             </div>
           </div>

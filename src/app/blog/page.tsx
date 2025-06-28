@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'ブログ | はぐたっち - ベビーマッサージ教室',
@@ -108,9 +109,11 @@ export default function BlogPage() {
                   <article key={post.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <div className="md:flex">
                       <div className="md:w-1/3">
-                        <img 
+                        <Image 
                           src={post.image} 
                           alt={post.title}
+                          width={300}
+                          height={192}
                           className="w-full h-48 md:h-full object-cover"
                         />
                       </div>
@@ -198,9 +201,11 @@ export default function BlogPage() {
                   <div className="space-y-4">
                     {blogPosts.slice(0, 3).map((post) => (
                       <div key={post.id} className="flex space-x-3">
-                        <img 
+                        <Image 
                           src={post.image} 
                           alt={post.title}
+                          width={64}
+                          height={64}
                           className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">

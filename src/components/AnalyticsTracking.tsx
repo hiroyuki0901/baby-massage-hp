@@ -6,7 +6,7 @@ import { analytics } from './GoogleAnalytics'
 // ページエンゲージメント追跡コンポーネント
 export function AnalyticsTracking() {
   useEffect(() => {
-    let startTime = Date.now()
+    const startTime = Date.now()
     let maxScrollDepth = 0
     let scrollTracked = new Set<number>()
 
@@ -54,7 +54,7 @@ export function AnalyticsTracking() {
     const trackFormSubmissions = () => {
       const forms = document.querySelectorAll('form')
       forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', () => {
           const formType = form.getAttribute('data-form-type') || 'unknown'
           analytics.formSubmit(formType)
         })
@@ -105,10 +105,10 @@ export function AnalyticsTracking() {
 }
 
 // 特定の要素のクリック追跡用HOC
-export function withClickTracking<T extends React.ComponentProps<any>>(
+export function withClickTracking<T extends React.ComponentProps<HTMLElement>>(
   Component: React.ComponentType<T>,
   eventName: string,
-  eventParams?: Record<string, any>
+  eventParams?: Record<string, unknown>
 ) {
   return function ClickTrackedComponent(props: T) {
     const handleClick = (e: React.MouseEvent) => {
@@ -125,7 +125,7 @@ export function withClickTracking<T extends React.ComponentProps<any>>(
 }
 
 // 外部リンククリック追跡
-export function trackExternalLinks() {
+export function useTrackExternalLinks() {
   useEffect(() => {
     const handleExternalLinkClick = (e: Event) => {
       const target = e.target as HTMLAnchorElement

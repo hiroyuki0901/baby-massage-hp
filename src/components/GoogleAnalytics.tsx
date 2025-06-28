@@ -90,7 +90,7 @@ export function GoogleTagManager() {
 }
 
 // カスタムイベント追跡用のヘルパー関数
-export const trackEvent = (eventName: string, parameters: Record<string, any> = {}) => {
+export const trackEvent = (eventName: string, parameters: Record<string, unknown> = {}) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, {
       ...parameters,
@@ -202,7 +202,7 @@ function getLessonName(lessonType: string): string {
 // TypeScript用のWindow拡張
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void
-    dataLayer: any[]
+    gtag: (...args: unknown[]) => void
+    dataLayer: unknown[]
   }
 }

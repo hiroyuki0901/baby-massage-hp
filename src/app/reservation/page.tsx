@@ -126,7 +126,7 @@ export default function ReservationPage() {
                   <p className="text-sm text-gray-700 mb-4">{lesson.description}</p>
                   
                   <ReservationButton 
-                    lessonType={lesson.id as any}
+                    lessonType={lesson.id as 'trial' | 'basic' | 'private' | 'okurumicare' | 'skincare'}
                     className="w-full hugtouch-btn hugtouch-btn-primary py-3 px-6 font-bold hugtouch-tap-target"
                   >
                     この日程で予約
